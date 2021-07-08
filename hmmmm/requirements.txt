@@ -1,0 +1,5 @@
+torch
+transformers
+pyttsx3
+pytz
+python-dateutil
