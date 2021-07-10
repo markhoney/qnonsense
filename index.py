@@ -9,10 +9,10 @@ happy_gen.gpu_support = "cpu"
 preprocessed = "preprocessed-data.json"
 
 if os.path.exists(preprocessed):
-	args = GENTrainArgs(load_preprocessed_data = True, load_preprocessed_data_path = "data/preprocessed-data.json")
+	args = GENTrainArgs(load_preprocessed_data = True, load_preprocessed_data_path = preprocessed)
 	happy_gen.train("10-0.txt", args = args)
 else:
-	args = GENTrainArgs(num_train_epochs = 1, save_preprocessed_data = True, save_preprocessed_data_path = "data/preprocessed-data.json") # learning_rate = 1e-5, , batch_size = 1
+	args = GENTrainArgs(num_train_epochs = 1, save_preprocessed_data = True, save_preprocessed_data_path = preprocessed) # learning_rate = 1e-5, , batch_size = 1
 	happy_gen.train("10-0.txt", args = args)
 
 args = GENSettings(no_repeat_ngram_size = 2, do_sample = True, early_stopping = False, top_k = 50, temperature = 0.7)
