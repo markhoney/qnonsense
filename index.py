@@ -4,6 +4,7 @@ import os
 from happytransformer import GENSettings, GENTrainArgs, HappyGeneration
 
 happy_gen = HappyGeneration("GPT-NEO", "EleutherAI/gpt-neo-125M") # 125M, 1.3B, 2.7B
+happy_gen.gpu_support = "cpu"
 
 preprocessed = "preprocessed-data.json"
 
